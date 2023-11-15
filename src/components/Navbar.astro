@@ -1,0 +1,57 @@
+---
+import NavItem from './NavItem.astro';
+
+const navItems = {
+  '/': {
+    name: 'home',
+  },
+  '/projects': {
+    name: 'projects',
+  },
+};
+
+const frameworks = {
+  next: {
+    name: 'next.js',
+  },
+  remix: {
+    name: 'remix',
+  },
+  astro: {
+    name: 'astro',
+  },
+};
+---
+
+<aside class="-ml-[8px] mb-16 tracking-tight">
+  <div class="lg:sticky lg:top-20">
+    <nav
+      class="flex flex-row items-center justify-between relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+      id="nav"
+    >
+      <div class="flex flex-row space-x-0">
+        {
+          Object.entries(navItems).map(([path, { name }]) => {
+            return <NavItem path={path} name={name} />;
+          })
+        }
+      </div>
+      <div class="flex flex-row space-x-0">
+        {
+          Object.entries(frameworks).map(([path, { name }]) => {
+            return (
+              <a
+                href={`https://${path.toLowerCase()}.umar.codes`}
+                class="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="relative py-1 px-2">{name}</span>
+              </a>
+            );
+          })
+        }
+      </div>
+    </nav>
+  </div>
+</aside>

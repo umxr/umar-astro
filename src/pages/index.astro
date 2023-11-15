@@ -1,193 +1,30 @@
 ---
+import Connect from '../components/Connect.astro';
 import Layout from '../components/Layout.astro';
-import ArrowIcon from '../components/ArrowIcon.astro';
-
-const PROJECTS: {
-  title: string;
-  description: string;
-  href: string;
-}[] = [
-  {
-    title: 'Puma',
-    description: 'Next.js, GraphQL, Sanity, Cloudinary',
-    href: 'https://uk.puma.com/uk/en',
-  },
-  {
-    title: 'Naturkompaniet',
-    description: 'Next.js, Sanity',
-    href: 'https://www.naturkompaniet.no/no/',
-  },
-  {
-    title: 'Wine for good',
-    description: 'Shopify, Theme Development',
-    href: 'https://wineforgood.ie/',
-  },
-  {
-    title: 'Absolute drinks',
-    description: 'Shopify, Theme Development',
-    href: 'https://absolutedrinks.net/',
-  },
-  {
-    title: 'Apopo',
-    description: 'Pimcore, Symfony',
-    href: 'https://www.apopo.org/',
-  },
-  {
-    href: 'https://atticwomenswear.com/',
-    title: 'Attic Womenswear',
-    description: 'Shopify, Theme Development',
-  },
-  {
-    href: 'https://cannycoffee.com/',
-    title: 'Canny Coffee',
-    description: 'Shopify, Theme Development',
-  },
-  {
-    href: 'http://deendevelopers.com/',
-    title: 'Deen Developers',
-    description: 'Next.js',
-  },
-  {
-    href: 'https://www.gatherdigital.co.uk/',
-    title: 'Gather Digital',
-    description: 'Pimcore, Symfony',
-  },
-  {
-    href: 'https://us.hotelchocolat.com/',
-    title: 'Hotel Chocolat',
-    description: 'Shopify, Theme Development',
-  },
-  {
-    href: 'https://www.icelolly.com/',
-    title: 'Icelolly',
-    description: 'Custom Framework, React, Node.js',
-  },
-  {
-    href: 'https://intouchnetworks.com/en-gb',
-    title: 'Intouch Networks',
-    description: 'Nuxt.js, Wordpress',
-  },
-  {
-    href: 'https://www.na-software.co.uk/',
-    title: 'NA Software',
-    description: 'Wordpress',
-  },
-  {
-    href: 'https://www.obrienswine.ie/',
-    title: "O'Briens Wine",
-    description: 'Shopify, Custom Theme Development',
-  },
-  {
-    href: 'https://www.pinseeker.co.uk/',
-    title: 'Pinseeker',
-    description: 'Pimcore, Symfony',
-  },
-  {
-    href: 'https://quran.cafe/',
-    title: 'Quran Cafe',
-    description: 'Next.js, Supabase',
-  },
-  {
-    href: 'https://gb.slendertone.com/',
-    title: 'Slendertone',
-    description: 'Shopify, Custom Theme Development',
-  },
-  {
-    href: 'https://uk.trtltravel.com/',
-    title: 'Trtl Travel',
-    description: 'Shopify, Custom Theme Development',
-  },
-  {
-    href: 'https://apps.apple.com/gb/app/elm-app/id1565557127/',
-    title: 'East London Mosque',
-    description: 'React Native, Expo, Firebase',
-  },
-];
+import Projects from '../components/Projects.astro';
 ---
 
 <Layout>
-  <main class="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-    <section>
-      <h1 class="font-semibold text-2xl mb-4 tracking-tighter">
-        hey, I&apos;m umar 👋
-      </h1>
-      <p class="mb-8">
-        I&apos;m a software engineer and community founder. I currently work as
-        an engineer at NearForm (formerly Formidable), Where i help our clients
-        build modern web applications and websites.
-      </p>
-      <h2
-        class="font-semibold text-2xl mb-4 tracking-tighter underline underline-offset-2"
-      >
-        projects.
-      </h2>
-      <ul class="mb-8">
-        {
-          PROJECTS.map((project) => {
-            return (
-              <li>
-                <a
-                  class="flex flex-col space-y-1 mb-4"
-                  href={project.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div class="w-full flex flex-col">
-                    <p class="text-neutral-900 dark:text-neutral-100 tracking-tight text-xl">
-                      {project.title}
-                    </p>
-                    <p class="text-neutral-600 dark:text-neutral-400 text-xs">
-                      {project.description}
-                    </p>
-                  </div>
-                </a>
-              </li>
-            );
-          })
-        }
-      </ul>
-      <h2
-        class="font-semibold text-2xl mb-4 tracking-tighter underline underline-offset-2"
-      >
-        let&apos;s connect.
-      </h2>
-      <ul
-        class="flex flex-col md:flex-row space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300"
-      >
-        <li>
-          <a
-            class="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://www.deendevelopers.com/"
-          >
-            <ArrowIcon />
-            <p class="h-7 ml-2">deen developers</p>
-          </a>
-        </li>
-        <li>
-          <a
-            class="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://twitter.com/umarrgora"
-          >
-            <ArrowIcon />
-            <p class="h-7 ml-2">twitter</p>
-          </a>
-        </li>
-        <li>
-          <a
-            class="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://www.linkedin.com/in/umar-gora-34a810a7/"
-          >
-            <ArrowIcon />
-            <p class="h-7 ml-2">linkedin</p>
-          </a>
-        </li>
-      </ul>
-    </section>
-  </main>
+  <section>
+    <h1 class="font-semibold text-2xl mb-4 tracking-tighter">
+      hey, I&apos;m umar 👋
+    </h1>
+    <p class="mb-8">
+      I&apos;m a software engineer and community founder. I currently work as an
+      engineer at NearForm (formerly Formidable), Where i help our clients build
+      modern web applications and websites.
+    </p>
+    <h2
+      class="font-semibold text-2xl mb-4 tracking-tighter underline underline-offset-2"
+    >
+      projects.
+    </h2>
+    <Projects />
+    <h2
+      class="font-semibold text-2xl mb-4 tracking-tighter underline underline-offset-2"
+    >
+      let&apos;s connect.
+    </h2>
+    <Connect />
+  </section>
 </Layout>
